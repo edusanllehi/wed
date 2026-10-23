@@ -55,8 +55,8 @@
     if (lastError) showError(lastError);
     if (!$("#thanks").hidden && lastThanks) showThanks(lastThanks);
     $("#submit-btn").textContent = t(sending ? "sending" : "submit");
-    store.set("localStorage", "boda-lang", lang);
     if (!opts || !opts.initial) {
+      store.set("localStorage", "boda-lang-choice", lang); // solo si el invitado lo elige
       const u = new URL(location.href);
       u.searchParams.set("lang", lang);
       history.replaceState(null, "", u.pathname + u.search + u.hash);
@@ -241,11 +241,10 @@
   });
 
   /* ---------- Arranque ---------- */
-  // Idioma: ?lang= > elegido antes > idioma del navegador > castellano
+  // Idioma: ?lang= > elegido antes por el invitado > castellano
   const fromUrl = new URLSearchParams(location.search).get("lang");
-  const saved = store.get("localStorage", "boda-lang");
-  const nav = (navigator.language || "").slice(0, 2).toLowerCase();
-  const start = LANGS.includes(fromUrl) ? fromUrl : LANGS.includes(saved) ? saved : LANGS.includes(nav) ? nav : FALLBACK;
+  const saved = store.get("localStorage", "boda-lang-choice");
+  const start = LANGS.includes(fromUrl) ? fromUrl : LANGS.includes(saved) ? saved : FALLBACK;
   setLang(start, { initial: true });
 
   // Si ya respondió en esta pestaña y recarga, no le pedimos que lo repita
