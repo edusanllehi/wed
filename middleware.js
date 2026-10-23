@@ -45,13 +45,7 @@ function readCookie(req, name) {
 
 function pickLang(req, url) {
   const q = url.searchParams.get("lang");
-  if (T[q]) return q;
-  const al = (req.headers.get("accept-language") || "").toLowerCase();
-  for (const tag of al.split(",")) {
-    const l = tag.trim().slice(0, 2);
-    if (l === "ca" || l === "es" || l === "en") return l;
-  }
-  return "es";
+  return T[q] ? q : "es"; // castellano por defecto
 }
 
 // Solo rutas internas: evita redirecciones a otros dominios
@@ -77,6 +71,7 @@ export function gatePage(lang, nextPath, error) {
   return `<!doctype html><html lang="${lang}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
+<meta name="format-detection" content="telephone=no">
 <title>Berta &amp; Edu · 15.05.27</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Cormorant+Garamond:wght@500;600&display=swap">
 <style>
