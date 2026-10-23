@@ -200,6 +200,8 @@
       $("#thanks").scrollIntoView({ behavior: "smooth", block: "center" });
       return;
     }
+    // Se perdió el acceso con código (p. ej. lo habéis cambiado): volver a la portada sin perder nada guardado
+    if (res.status === 401 && body.status === "locked") { location.reload(); return; }
     const map = { duplicate: "err_dup", rate_limited: "err_rate", invalid: "err_invalid" };
     showError(map[body.status] || (res.status >= 500 ? "err_server" : "err_invalid"));
   });
