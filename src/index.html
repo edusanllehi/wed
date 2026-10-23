@@ -173,14 +173,15 @@ a[x-apple-data-detectors],.iban .num a{color:inherit!important;text-decoration:n
 .iban button{justify-self:start;background:var(--cream);color:var(--sea-deep);border:0;padding:12px 18px;font:600 .8rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
 
 /* ---------- RSVP ---------- */
-form{display:grid;gap:34px;margin-top:38px}
+form{display:grid;gap:34px;margin-top:38px;padding:34px 30px 38px;background:rgba(251,244,226,.6);border:1px solid var(--line);box-shadow:0 1px 0 rgba(43,39,34,.04),0 18px 40px -28px rgba(43,39,34,.35)}
+@media (max-width:560px){form{padding:26px 18px 30px;margin-left:-4px;margin-right:-4px}}
 fieldset{border:0;margin:0;padding:0;display:grid;gap:12px;min-width:0}
 legend,.label{font-size:.8rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600;padding:0;margin-bottom:12px}
 .opt{text-transform:none;letter-spacing:0;font-weight:500;color:var(--ink-soft);font-size:1rem}
 .hint{font-style:italic;color:var(--ink-soft);margin-top:-6px;font-size:1.15rem}
-input[type=text],textarea{width:100%;font:inherit;font-size:1.35rem;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;border-radius:0}
-textarea{min-height:120px;resize:vertical;border:1px solid var(--line);border-bottom-color:var(--ink);padding:12px 14px;background:rgba(255,255,255,.25)}
-input[type=text]:focus,textarea:focus{outline:none;border-bottom:2px solid var(--sea);padding-bottom:9px}
+input[type=text],textarea{width:100%;font:inherit;font-size:1.35rem;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-bottom:1px solid var(--ink);padding:12px 14px;border-radius:0;-webkit-appearance:none;appearance:none}
+textarea{min-height:120px;resize:vertical}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--sea);border-bottom:2px solid var(--sea);padding-bottom:11px;background:#FFFBF1}
 input::placeholder,textarea::placeholder{color:#9A9083}
 .choices{display:flex;flex-wrap:wrap;gap:12px}
 .choice{position:relative}
@@ -189,7 +190,7 @@ input::placeholder,textarea::placeholder{color:#9A9083}
 .choice input:checked + span{background:var(--ink);color:var(--paper)}
 .choice input:focus-visible + span{outline:2px solid var(--sea);outline-offset:3px}
 .choice.big span{padding:16px 24px;font-family:var(--display);font-size:1.8rem;line-height:1}
-.sub{display:grid;gap:34px;padding-left:22px;border-left:2px solid var(--paper-2)}
+.sub{display:grid;gap:34px;padding-left:22px;border-left:2px solid rgba(45,103,130,.22)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .submit{justify-self:start;background:var(--ink);color:var(--cream);border:0;padding:20px 40px;font:400 2rem/1 var(--display);cursor:pointer}
 .submit:hover{background:var(--sea-deep)}
@@ -262,7 +263,7 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
 
     <fieldset>
       <label class="label" for="nombre" data-i18n="f_name">Tu nombre y apellidos</label>
-      <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="120" required>
+      <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="120" required data-i18n-ph="name_ph" placeholder="Escribe aquí tu nombre">
     </fieldset>
 
     <fieldset>
@@ -284,7 +285,7 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
 
       <fieldset id="acomp-block" hidden>
         <label class="label" for="nombre_acompanante" data-i18n="f_plusname">Nombre y apellidos de tu pareja</label>
-        <input type="text" id="nombre_acompanante" name="nombre_acompanante" autocomplete="off" maxlength="120">
+        <input type="text" id="nombre_acompanante" name="nombre_acompanante" autocomplete="off" maxlength="120" data-i18n-ph="partner_ph" placeholder="Escribe aquí su nombre">
       </fieldset>
 
       <fieldset>
