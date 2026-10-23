@@ -91,13 +91,13 @@ begin
     return jsonb_build_object('status', 'ok', 'replayed', true);
   end if;
 
-  -- Límite de abuso: máx. 20 respuestas por conexión cada 10 minutos
+  -- Límite de abuso: máx. 100 respuestas por conexión cada 10 minutos
   -- (holgado para que varios invitados que compartan wifi o red móvil no se bloqueen)
   if p_ip_hash is not null then
     select count(*) into v_recent
       from rsvp_responses
      where ip_hash = p_ip_hash and created_at > now() - interval '10 minutes';
-    if v_recent >= 20 then
+    if v_recent >= 100 then
       return jsonb_build_object('status', 'rate_limited');
     end if;
   end if;
