@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Berta i Edu · 15.05.27</title>
+<meta name="description" content="Berta i Edu · 15.05.2027 · Fortaleza de la Mola, Menorca">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<style>
+/* Layout: el save the date abre la página; debajo, una columna de lectura sobre papel
+   con la misma tipografía del póster (Instrument Serif) en todos los títulos. */
+:root{
+  --paper:#F1ECE0;
+  --paper-2:#E9E2D2;
+  --ink:#2B2722;
+  --ink-soft:#6A6155;
+  --sea:#2D6782;
+  --sea-deep:#1E4759;
+  --cream:#FBF4E2;
+  --line:rgba(43,39,34,.16);
+  --display:"Instrument Serif","Times New Roman",Georgia,serif;
+  --body:"Cormorant Garamond",Garamond,"Times New Roman",Georgia,serif;
+  --shoes:url("/assets/shoes.jpg");
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-weight:500;font-size:1.3rem;line-height:1.55;
+  padding-inline:20px;padding-block:0;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:var(--grain);opacity:.12;mix-blend-mode:multiply}
+main,header,nav,footer{position:relative;z-index:1}
+a{color:var(--sea);text-underline-offset:4px;text-decoration-thickness:1px}
+a:hover{color:var(--sea-deep)}
+:focus-visible{outline:2px solid var(--sea);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1;margin:0;text-wrap:balance;letter-spacing:-.015em}
+h2 em,h3 em{color:var(--sea);font-style:normal}
+p{margin:0}
+strong{font-weight:600}
+.caps{font-family:var(--body);text-transform:uppercase;letter-spacing:.28em;font-size:.82rem;font-weight:600}
+.wrap{max-width:720px;margin-inline:auto}
+
+/* ---------- Portada ---------- */
+.poster{max-width:620px;margin-inline:auto;padding-block:10px 30px;display:grid;gap:22px;justify-items:center}
+.poster .caps{font-weight:500;letter-spacing:.3em;color:var(--ink);text-align:center;text-wrap:balance;line-height:1.7;max-width:34em}
+.poster img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:1249/1674}
+.nw{white-space:nowrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Navegación ---------- */
+.nav{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:5;margin-inline:-20px;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  border-block:1px solid var(--line);
+}
+.nav ul{list-style:none;margin:0 auto;padding:6px 12px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 4px;max-width:1100px}
+.nav ul a{display:block;white-space:nowrap;padding:10px 12px;color:var(--ink);text-decoration:none;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.nav ul a:hover{color:var(--sea)}
+.lang{display:flex;justify-content:flex-end;gap:2px;max-width:1100px;margin-inline:auto;padding-top:14px}
+.lang button{background:none;border:0;padding:8px 6px;font:600 .8rem/1 var(--body);letter-spacing:.18em;color:var(--ink-soft);cursor:pointer}
+.lang button[aria-pressed="true"]{color:var(--sea);text-decoration:underline;text-underline-offset:5px}
+
+/* ---------- Bloques ---------- */
+section{padding-block:80px;scroll-margin-top:100px}
+section + section{border-top:1px solid var(--line)}
+.kicker{display:block;color:var(--sea);margin-bottom:16px}
+section h2{font-size:clamp(3rem,10vw,4.8rem);margin-bottom:24px}
+.lede{font-size:1.38rem}
+.soft{color:var(--ink-soft)}
+.note{font-style:italic;color:var(--ink-soft);font-size:1.15rem;margin-top:26px}
+
+.card{background:var(--paper-2);padding:28px 30px;margin-top:34px;display:grid;gap:4px}
+.card .caps{color:var(--ink-soft);font-weight:500;font-size:.74rem}
+.card strong{font-family:var(--display);font-weight:400;font-size:2.3rem;line-height:1.1}
+.card .muted{color:#8D8475}
+.card a{margin-top:8px;justify-self:start}
+.card.split{grid-template-columns:minmax(0,1fr) auto;gap:24px}
+.card.split > div{display:grid;gap:4px;align-content:start;min-width:0}
+.card.split > div + div{border-left:1px solid var(--line);padding-left:28px}
+@media (max-width:560px){.card.split{grid-template-columns:1fr}.card.split > div + div{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:18px}}
+
+.timeline{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:22px}
+.timeline li{display:grid;grid-template-columns:6.5rem 1fr;gap:16px;align-items:baseline}
+.timeline time{font-family:var(--display);font-size:2.4rem;line-height:1;color:var(--sea);font-variant-numeric:tabular-nums}
+.sub-h{font-size:2.2rem;margin-top:44px;margin-bottom:8px}
+
+/* Dress code */
+.dress{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:30px;border:1px solid var(--line)}
+.dress div{padding:26px 30px;display:grid;gap:8px}
+.dress div + div{border-left:1px solid var(--line)}
+.dress .caps{color:var(--ink-soft);font-weight:500;font-size:.74rem}
+.dress strong{font-family:var(--display);font-weight:400;font-size:2rem;line-height:1.1}
+.white{display:flex;align-items:center;gap:12px;margin-top:26px;font-style:italic;font-size:1.35rem}
+.couple{margin-top:14px;font-style:italic;color:var(--sea);font-size:1.2rem}
+.mood{margin-top:18px;font-size:1.2rem}
+.white svg{width:26px;height:26px;flex:none}
+
+/* Listas (hoteles, coches) */
+.list{display:grid;margin-top:34px;border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start}
+.item h3{font-size:2.1rem;min-width:0}
+.item h3 a{color:inherit;text-decoration:none}
+.stars{font-family:"Segoe UI Symbol","Apple Symbols","DejaVu Sans",sans-serif;font-size:.5em;letter-spacing:.12em;color:var(--sea);vertical-align:.35em;white-space:nowrap}
+.item h3 a:hover{color:var(--sea)}
+.item p a{font-size:1.1rem}
+.item p{grid-column:1;color:var(--ink-soft)}
+.code{font-variant-numeric:lining-nums;grid-column:2;grid-row:1;align-self:center;background:transparent;border:1px dashed var(--sea);color:var(--sea);padding:8px 14px;font:600 .9rem/1 var(--body);letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.code:hover{background:rgba(45,103,130,.07)}
+.code.ok{border-style:solid}
+
+/* Franja de mar */
+.sep{border:0;border-top:1px solid var(--line);max-width:720px;margin:0 auto}
+.band{margin-inline:-20px;height:clamp(180px,30vw,380px);background:var(--shoes) center 55%/cover no-repeat;position:relative}
+.band::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.14;mix-blend-mode:overlay}
+
+/* Menorca */
+.spots{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:30px 30px;margin-top:22px}
+.spots + .sub-h{margin-top:56px}
+.spot{display:grid;gap:6px;align-content:start;padding-top:16px;border-top:1px solid var(--ink)}
+.spot h3{font-size:1.95rem}
+.spot .caps{color:var(--sea);font-size:.72rem}
+.spot p{color:var(--ink-soft)}
+
+
+
+/* Hoteles y coches: listas compactas */
+.mini{list-style:none;margin:26px 0 0;padding:0;columns:2 300px;column-gap:40px}
+.mini li{break-inside:avoid;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:1.12rem;line-height:1.3}
+.mini .nm{min-width:0}
+.mini a{color:var(--ink);text-decoration:none}
+.mini a:hover{color:var(--sea);text-decoration:underline}
+.mini .stars{font-size:.62em;vertical-align:.2em;margin-left:4px}
+.mini .code{grid-column:auto;grid-row:auto;align-self:auto;padding:4px 8px;font-size:.72rem;letter-spacing:.14em}
+
+/* Menorca: mapa y recomendaciones */
+.map{margin:34px 0 10px}
+.island{display:block;width:100%;max-width:100%;height:auto}
+.m-land{fill:var(--paper-2);stroke:var(--ink-soft);stroke-width:1.2}
+.m-dot{fill:var(--sea)}
+.m-ring{fill:none;stroke:var(--sea);stroke-width:1.5}
+.m-lab{font-family:var(--body);font-weight:600;font-size:17px;letter-spacing:.14em;text-transform:uppercase;fill:var(--ink)}
+.m-strong{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:0;text-transform:none;fill:var(--sea)}
+.m-sub{font-family:var(--body);font-style:italic;font-size:17px;fill:var(--ink-soft)}
+.recs{columns:3 190px;column-gap:34px;margin-top:30px}
+.recs > div{break-inside:avoid;margin-bottom:28px}
+.recs h4{margin:0 0 10px;font:600 .74rem/1.3 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--sea)}
+.recs ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.recs li{font-size:1.1rem;line-height:1.35}
+.recs small{display:block;font-size:.88rem;font-style:italic;color:var(--ink-soft)}
+@media (max-width:560px){.recs{columns:2;column-gap:20px}.recs li{font-size:1.02rem}.m-lab,.m-sub{font-size:30px;letter-spacing:.08em}.m-strong{font-size:40px}.m-dot{r:9px}}
+
+/* Regalo */
+.gift{background:var(--sea-deep);color:var(--cream);margin-inline:-20px;padding-inline:20px;border-top:0!important}
+.gift .kicker{color:#A9CBD9}
+.gift h2{color:var(--cream)}
+.gift .soft{color:#CFDCE0;margin-top:14px}
+.iban{margin-top:32px;display:grid;gap:12px;padding:26px;border:1px solid rgba(251,244,226,.35)}
+.iban .caps{font-size:.72rem;color:#A9CBD9;font-weight:500}
+.iban .num{font-family:var(--display);font-size:clamp(1.5rem,6vw,2.2rem);letter-spacing:.02em;word-break:break-word;user-select:all}
+.iban button{justify-self:start;background:var(--cream);color:var(--sea-deep);border:0;padding:12px 18px;font:600 .8rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+
+/* ---------- RSVP ---------- */
+form{display:grid;gap:34px;margin-top:38px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:12px;min-width:0}
+legend,.label{font-size:.8rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600;padding:0;margin-bottom:12px}
+.opt{text-transform:none;letter-spacing:0;font-weight:500;color:var(--ink-soft);font-size:1rem}
+.hint{font-style:italic;color:var(--ink-soft);margin-top:-6px;font-size:1.15rem}
+input[type=text],textarea{width:100%;font:inherit;font-size:1.35rem;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;border-radius:0}
+textarea{min-height:120px;resize:vertical;border:1px solid var(--line);border-bottom-color:var(--ink);padding:12px 14px;background:rgba(255,255,255,.25)}
+input[type=text]:focus,textarea:focus{outline:none;border-bottom:2px solid var(--sea);padding-bottom:9px}
+input::placeholder,textarea::placeholder{color:#9A9083}
+.choices{display:flex;flex-wrap:wrap;gap:12px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.choice span{display:inline-flex;align-items:center;padding:12px 20px;border:1px solid var(--ink);font-size:1.25rem;cursor:pointer;transition:background .15s,color .15s}
+.choice input:checked + span{background:var(--ink);color:var(--paper)}
+.choice input:focus-visible + span{outline:2px solid var(--sea);outline-offset:3px}
+.choice.big span{padding:16px 24px;font-family:var(--display);font-size:1.8rem;line-height:1}
+.sub{display:grid;gap:34px;padding-left:22px;border-left:2px solid var(--paper-2)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.submit{justify-self:start;background:var(--ink);color:var(--cream);border:0;padding:20px 40px;font:400 2rem/1 var(--display);cursor:pointer}
+.submit:hover{background:var(--sea-deep)}
+.submit[disabled]{opacity:.6;cursor:progress}
+.error{color:#8A2E1E;font-size:1.15rem}
+.thanks{margin-top:38px;padding:36px 30px;background:var(--paper-2);display:grid;gap:10px}
+.thanks h3{font-size:2.6rem}
+.thanks button{justify-self:start;background:none;border:0;border-bottom:1px solid currentColor;padding:2px 0;font:inherit;color:var(--sea);cursor:pointer;margin-top:6px}
+
+footer{padding-block:52px 60px;text-align:center;display:grid;gap:10px;justify-items:center}
+footer .mono{font-family:var(--display);font-size:2.6rem}
+
+@media (max-width:560px){
+  body{font-size:1.2rem}
+  section{padding-block:60px}
+  .poster{padding-block:26px 22px}
+  .timeline li{grid-template-columns:4.8rem 1fr}
+  .timeline time{font-size:2rem}
+  .dress div + div{border-left:0;border-top:1px solid var(--line)}
+  .item{grid-template-columns:1fr}
+  .code{grid-column:1;grid-row:auto;justify-self:start;margin-top:6px}
+  .sub{padding-left:14px}
+  .card{padding:24px 22px}
+  .nav ul{padding:6px 4px;gap:0}
+  .nav ul a{padding:8px 7px;font-size:.68rem;letter-spacing:.14em}
+}
+</style>
+<script src="/i18n.js" defer></script>
+<script src="/app.js" defer></script>
+</head>
+<body>
+
+<div class="lang" role="group" aria-label="Idioma" data-i18n-aria="aria_lang">
+  <button type="button" data-lang="es" aria-pressed="true">ES</button>
+  <button type="button" data-lang="ca" aria-pressed="false">CA</button>
+  <button type="button" data-lang="en" aria-pressed="false">EN</button>
+</div>
+
+<header class="poster" id="inicio">
+  <p class="caps" data-i18n-html="hero_k">Nos casamos y queremos celebrarlo con vosotros</p>
+  <h1 class="sr">Berta i Edu · 15.05.27</h1>
+  <img src="/assets/poster.jpg" width="1249" height="1674" alt="Berta i Edu · 15.05.27" fetchpriority="high">
+  <p class="caps">Menorca</p>
+</header>
+
+<nav class="nav" aria-label="Secciones" data-i18n-aria="aria_nav">
+  <ul>
+    <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="#dia" data-i18n="nav_dia">El día</a></li>
+    <li><a href="#preboda" data-i18n="nav_preboda">Preboda</a></li>
+    <li><a href="#dresscode">Dress code</a></li>
+    <li><a href="#alojamiento" data-i18n="nav_aloj">Alojamiento</a></li>
+    <li><a href="#coches" data-i18n="nav_coches">Coches</a></li>
+    <li><a href="#menorca">Menorca</a></li>
+    <li><a href="#regalo" data-i18n="nav_regalo">Regalo</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============ RSVP ============ -->
+<section class="wrap" id="rsvp">
+  <span class="caps kicker" data-i18n="rsvp_k">Confirma tu asistencia</span>
+  <h2 data-i18n-html="rsvp_h">¿Vienes a <em>Menorca</em>?</h2>
+  <p class="lede" data-i18n-html="rsvp_lede">Nos haría muchísima ilusión que estuvieras este día con nosotros. Confírmanos si vienes:</p>
+  <p class="couple" data-i18n="rsvp_couple">Si la invitación es para dos, responded solo uno por pareja.</p>
+
+  <form id="rsvp-form" novalidate>
+    <input class="hp" type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <fieldset>
+      <label class="label" for="nombre" data-i18n="f_name">Tu nombre y apellidos</label>
+      <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="120" required>
+    </fieldset>
+
+    <fieldset>
+      <legend data-i18n="f_attend">¿Vendrás a la boda?</legend>
+      <div class="choices">
+        <label class="choice big"><input type="radio" id="asiste-si" name="asiste" value="yes"><span data-i18n="yes">Sí, ¡allí estaré!</span></label>
+        <label class="choice big"><input type="radio" id="asiste-no" name="asiste" value="no"><span data-i18n="no">No podré ir</span></label>
+      </div>
+    </fieldset>
+
+    <div class="sub" id="si-block" hidden>
+      <fieldset>
+        <legend data-i18n="f_plus">¿Vienes con pareja?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" id="acomp-si" name="acompanante" value="partner"><span data-i18n="plus_yes">Sí</span></label>
+          <label class="choice"><input type="radio" id="acomp-no" name="acompanante" value="alone"><span data-i18n="plus_no">No, vengo solo/a</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset id="acomp-block" hidden>
+        <label class="label" for="nombre_acompanante" data-i18n="f_plusname">Nombre y apellidos de tu pareja</label>
+        <input type="text" id="nombre_acompanante" name="nombre_acompanante" autocomplete="off" maxlength="120">
+      </fieldset>
+
+      <fieldset>
+        <legend id="pre-legend">¿Vendrás a la preboda?</legend>
+        <p class="hint" data-i18n="pre_hint">Viernes 14 de mayo, la tarde antes de la boda.</p>
+        <div class="choices">
+          <label class="choice"><input type="radio" id="pre-si" name="preboda" value="yes"><span id="pre-yes-label">Sí, me apunto</span></label>
+          <label class="choice"><input type="radio" id="pre-no" name="preboda" value="no"><span id="pre-no-label">No podré</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="f_diet_me">Restricciones alimentarias · tú</legend>
+        <div class="choices" data-diet="dieta"></div>
+        <input type="text" id="dieta_otros" name="dieta_otros" maxlength="300" data-i18n-ph="diet_other" placeholder="¿Otra alergia o intolerancia? Cuéntanosla">
+      </fieldset>
+
+      <fieldset id="diet2-block" hidden>
+        <legend data-i18n="f_diet_plus">Restricciones alimentarias · tu pareja</legend>
+        <div class="choices" data-diet="dieta_acompanante"></div>
+        <input type="text" id="dieta_acompanante_otros" name="dieta_acompanante_otros" maxlength="300" data-i18n-ph="diet_other2" placeholder="¿Otra alergia o intolerancia?">
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="f_bus">Transporte el día de la boda</legend>
+        <p class="hint" data-i18n="bus_hint">Habrá autobuses desde el puerto de Maó hasta la Fortaleza de la Mola, ida y vuelta.</p>
+        <div class="choices">
+          <label class="choice"><input type="radio" id="bus-si" name="transporte" value="bus"><span id="bus-yes-label">Usaré el bus</span></label>
+          <label class="choice"><input type="radio" id="bus-no" name="transporte" value="car"><span id="bus-no-label">Iré en coche</span></label>
+        </div>
+      </fieldset>
+    </div>
+
+    <fieldset id="msg-block" hidden>
+      <label class="label" for="mensaje"><span data-i18n="f_msg">¿Algo más que quieras contarnos?</span> <span class="opt" data-i18n="optional">(opcional)</span></label>
+      <textarea id="mensaje" name="mensaje" maxlength="2000" data-i18n-ph="msg_ph" placeholder="Una canción que no puede faltar, un mensaje…"></textarea>
+    </fieldset>
+
+    <p class="error" id="form-error" role="alert" hidden></p>
+    <button class="submit" type="submit" id="submit-btn" data-i18n="submit">Enviar respuesta</button>
+    <noscript><p class="error">Para responder necesitas tener JavaScript activado.</p></noscript>
+  </form>
+
+  <div class="thanks" id="thanks" hidden aria-live="polite">
+    <h3 id="thanks-title"></h3>
+    <p id="thanks-text" class="soft"></p>
+    <button type="button" id="again" data-i18n="again">Enviar otra respuesta</button>
+  </div>
+</section>
+
+<hr class="sep" aria-hidden="true">
+
+<!-- ============ EL DÍA ============ -->
+<section class="wrap" id="dia">
+  <span class="caps kicker" data-i18n="dia_k">Sábado, 15 de mayo de 2027</span>
+  <h2 data-i18n="nav_dia">El día</h2>
+  <p class="lede" data-i18n="dia_lede">La ceremonia y toda la celebración serán en la Fortaleza de la Mola.</p>
+
+  <div class="card split">
+    <div>
+      <span class="caps" data-i18n="lugar">Lugar</span>
+      <strong data-i18n="venue">Fortaleza de la Mola</strong>
+      <span class="soft" data-i18n="city_full">Maó, Menorca</span>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Fortalesa+de+la+Mola+Ma%C3%B3+Menorca" target="_blank" rel="noopener" data-i18n="map">Ver en el mapa</a>
+    </div>
+    <div>
+      <span class="caps" data-i18n="hora">Hora</span>
+      <strong>17:00</strong>
+      <span class="soft" data-i18n="cer">Ceremonia</span>
+    </div>
+  </div>
+
+  <h3 class="sub-h" data-i18n="how_h">Cómo llegar</h3>
+  <p data-i18n-html="how_p">Habrá <strong>autobuses desde el puerto de Maó</strong> hasta la Fortaleza de la Mola, de ida y vuelta. Los horarios os los comunicaremos más adelante. Si lo prefieres, también puedes ir en coche.</p>
+  <div class="card">
+    <span class="caps" data-i18n="bus_from">Salida de los autobuses</span>
+    <strong data-i18n="bus_place">Puerto de Maó</strong>
+    <a href="https://maps.app.goo.gl/kjH5zBGrpkeFEamT9" target="_blank" rel="noopener" data-i18n="map">Ver en el mapa</a>
+  </div>
+</section>
+
+<!-- ============ PREBODA ============ -->
+<section class="wrap" id="preboda">
+  <span class="caps kicker" data-i18n="pre_k">Viernes, 14 de mayo de 2027</span>
+  <h2 data-i18n="pre_h">La preboda</h2>
+  <p class="lede" data-i18n="pre_lede">La tarde antes nos juntaremos para empezar a celebrarlo.</p>
+  <div class="card">
+    <span class="caps" data-i18n="lugar_hora">Lugar y hora</span>
+    <strong class="muted" data-i18n="tbc">Por confirmar</strong>
+  </div>
+</section>
+
+<!-- ============ DRESS CODE ============ -->
+<section class="wrap" id="dresscode">
+  <span class="caps kicker" data-i18n="dress_k">Qué ponerse</span>
+  <h2>Dress code</h2>
+  <div class="dress">
+    <div><span class="caps" data-i18n="ellos">Ellos</span><strong data-i18n="ellos_v">Traje oscuro y corbata</strong></div>
+    <div><span class="caps" data-i18n="ellas">Ellas</span><strong data-i18n="ellas_v">Midi / largo</strong></div>
+  </div>
+  <p class="white">
+    <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11.5" fill="#FFFDF7" stroke="var(--ink)" stroke-width="1"/><path d="M5 21L21 5" stroke="var(--ink)" stroke-width="1.6"/></svg>
+    <span data-i18n="white">El blanco, reservado para la novia.</span>
+  </p>
+  <p class="note" data-i18n="dress_note">La Mola es una fortaleza junto al mar: suelos de piedra y algo de brisa por la noche. Os recomendamos tacón ancho, zapato cómodo para la fiesta y un chal o capa de abrigo para la noche.</p>
+  <p class="mood"><span data-i18n="mood_txt">For the ladies: os dejamos un moodboard en Pinterest para inspiraros.</span> <a href="https://pin.it/7EFgu2Zqe" target="_blank" rel="noopener" data-i18n="mood_link">Ver moodboard →</a></p>
+</section>
+
+<!-- ============ ALOJAMIENTO ============ -->
+<section class="wrap" id="alojamiento">
+  <span class="caps kicker" data-i18n="aloj_k">Dónde dormir</span>
+  <h2 data-i18n="aloj_h">Alojamiento</h2>
+  <p class="lede" data-i18n-html="aloj_lede">Os recomendamos quedaros en <strong>Maó o alrededores</strong>: tenéis el aeropuerto al lado, es donde será todo y de donde saldrán los autobuses. Os dejamos una selección de hoteles y algunos códigos de descuento.</p>
+  <ul class="mini">
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=Cristine+Bedfor+Guest+Houses%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Cristine Bedfor</a> <span class="stars" aria-label="5★">★★★★★</span></span><button class="code" type="button">EDUARDBERTA2027</button></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Hevresac%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Hotel Hevresac</a> <span class="stars" aria-label="4★">★★★★</span></span></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Casa+Miranda%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Casa Miranda</a> <span class="stars" aria-label="4★">★★★★</span></span></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+San+Miguel+Menorca%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Hotel San Miguel</a> <span class="stars" aria-label="3★">★★★</span></span></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bordoy+Casa+L%C3%A1dico%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Bordoy Casa Ládico</a> <span class="stars" aria-label="5★">★★★★★</span></span></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=Can+Alberti+1740%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Can Alberti</a> <span class="stars" aria-label="4★">★★★★</span></span></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=ARTIEM+Capri%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">ARTIEM Capri</a> <span class="stars" aria-label="4★">★★★★</span></span><button class="code" type="button">BODABERTAYEDU</button></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=Senator+Port+Mah%C3%B3n+Hotel%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Senator Port Mahón</a> <span class="stars" aria-label="4★">★★★★</span></span></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=Catalonia+Mirador+des+Port%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Catalonia Mirador des Port</a> <span class="stars" aria-label="4★">★★★★</span></span></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hostal+Jume%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Hostal Jume</a> <span class="stars" aria-label="1★">★</span></span><button class="code" type="button">BODABERTAYEDUARD</button></li>
+      <li><span class="nm"><a href="https://www.google.com/maps/search/?api=1&amp;query=S%C3%ADndic+Hotel%2C+Mah%C3%B3n%2C+Menorca" target="_blank" rel="noopener">Síndic Hotel</a> <span class="stars" aria-label="4★">★★★★</span></span><button class="code" type="button">SINDIC10</button></li>
+    </ul>
+  <p class="note" data-i18n="airbnb">Si sois un grupo grande, también hay buenas opciones de Airbnb por la zona.</p>
+</section>
+
+<!-- ============ COCHES ============ -->
+<section class="wrap" id="coches">
+  <span class="caps kicker" data-i18n="car_k">Moverse por la isla</span>
+  <h2 data-i18n="car_h">Alquiler de coche</h2>
+  <p class="lede" data-i18n="car_lede">Para descubrir Menorca lo mejor es tener coche. Si necesitáis uno, aquí tenéis algunas empresas de alquiler y algunos códigos de descuento.</p>
+  <ul class="mini">
+      <li><span class="nm"><a href="https://cochesmenorca.es/" target="_blank" rel="noopener">Coches Menorca</a></span></li>
+      <li><span class="nm"><a href="https://www.autosmenorca.com/es" target="_blank" rel="noopener">Autos Menorca</a></span><button class="code" type="button">BERTAEDU</button></li>
+      <li><span class="nm"><a href="https://doralauto.com/" target="_blank" rel="noopener">Doral Auto</a></span><button class="code" type="button">BODAEB</button></li>
+      <li><span class="nm"><a href="https://www.menorcarent.com/" target="_blank" rel="noopener">Menorca Rent</a></span></li>
+      <li><span class="nm"><a href="https://ambercarsmenorca.com/" target="_blank" rel="noopener">Amber Cars Menorca</a></span></li>
+      <li><span class="nm"><a href="https://autosescastell.com/" target="_blank" rel="noopener">Autos Es Castell</a></span></li>
+    </ul>
+</section>
+
+<div class="band" aria-hidden="true"></div>
+
+<!-- ============ MENORCA ============ -->
+<section class="wrap" id="menorca">
+  <span class="caps kicker" data-i18n="men_k">Ya que estáis aquí</span>
+  <h2 data-i18n="men_h">Nuestra Menorca</h2>
+  <p class="lede" data-i18n="men_lede">Si os quedáis unos días más y queréis disfrutar de la isla, aquí tenéis nuestros sitios favoritos.</p>
+  <figure class="map">
+    <svg class="island" viewBox="0 0 950 517" role="img" aria-label="Menorca">
+      <path d="M691.3,291.6 C693.3,300.5 691.4,305.1 697.0,317.1 C702.6,329.0 718.6,350.8 725.0,363.1 C731.5,375.4 735.5,386.2 735.8,390.8 C736.2,395.4 729.4,392.6 727.0,390.8 C724.7,389.0 724.0,383.6 721.7,380.2 C719.4,376.7 716.4,373.4 713.2,370.3 C710.1,367.3 706.5,364.3 702.9,361.9 C699.2,359.5 693.8,338.4 691.3,356.1 C688.8,373.8 699.5,447.9 687.6,468.0 C675.7,488.2 646.6,483.1 619.9,477.0 C593.2,470.9 578.1,462.3 527.4,431.3 C476.8,400.4 358.7,317.5 316.2,291.2 C273.6,264.9 288.3,276.8 272.3,273.7 C256.3,270.6 244.4,269.5 220.1,272.5 C195.7,275.5 150.3,291.4 126.2,291.6 C102.2,291.8 83.3,280.1 75.8,273.7 C68.4,267.3 80.3,260.9 81.4,253.4 C82.5,246.0 81.5,236.7 82.4,228.9 C83.3,221.1 83.7,212.6 86.9,206.5 C90.1,200.5 101.0,196.3 101.7,192.4 C102.4,188.5 97.3,186.2 91.1,183.0 C84.9,179.8 71.0,176.6 64.6,173.3 C58.2,169.9 56.8,168.1 52.7,163.0 C48.7,157.8 42.4,147.4 40.3,142.6 C38.2,137.8 39.2,137.0 40.0,134.2 C40.8,131.3 43.7,130.3 45.1,125.5 C46.5,120.6 45.1,111.8 48.3,104.8 C51.5,97.9 46.6,90.9 64.4,84.0 C82.2,77.2 134.9,65.0 155.2,63.8 C175.5,62.5 160.2,76.6 186.4,76.6 C212.5,76.6 282.4,65.5 312.0,63.8 C341.7,62.0 353.1,66.1 364.3,66.1 C375.5,66.1 373.6,65.5 379.2,63.8 C384.7,62.0 390.9,60.0 397.6,55.7 C404.3,51.4 413.5,42.2 419.5,38.0 C425.4,33.7 430.5,28.0 433.5,30.0 C436.4,32.0 434.5,44.5 437.1,50.1 C439.6,55.7 442.0,57.5 448.7,63.6 C455.5,69.8 473.4,82.2 477.8,86.9 C482.2,91.6 476.0,88.9 475.0,91.8 C474.1,94.7 472.6,100.1 472.3,104.3 C472.0,108.5 471.4,113.9 473.0,117.0 C474.6,120.1 479.1,122.7 481.9,122.8 C484.8,122.9 487.1,120.5 490.1,117.7 C493.1,114.9 496.0,111.2 499.8,106.1 C503.5,101.0 510.9,94.3 512.6,86.9 C514.3,79.6 509.0,67.3 510.0,62.0 C511.1,56.7 516.0,54.8 518.7,55.2 C521.5,55.6 526.1,59.0 526.6,64.3 C527.0,69.6 521.0,81.2 521.5,86.9 C522.0,92.7 521.9,93.0 529.3,99.0 C536.8,104.9 558.6,116.7 565.9,122.8 C573.3,129.0 571.3,132.2 573.5,135.7 C575.7,139.2 576.0,140.1 579.2,143.6 C582.4,147.1 589.2,153.9 592.7,156.7 C596.1,159.5 595.4,159.1 599.8,160.4 C604.2,161.7 614.3,162.8 619.1,164.3 C623.8,165.8 624.5,165.3 628.3,169.3 C632.1,173.3 637.7,180.3 641.8,188.1 C645.9,195.9 651.2,207.3 652.8,216.1 C654.4,224.9 655.6,235.2 651.5,240.9 C647.4,246.7 628.8,247.2 628.3,250.5 C627.8,253.8 641.8,259.2 648.6,260.6 C655.4,262.1 663.1,258.7 669.1,259.2 C675.2,259.7 681.2,258.3 684.9,263.7 C688.6,269.1 689.3,282.7 691.3,291.6Z" class="m-land"/>
+      <circle cx="91" cy="165" r="6" class="m-dot"/><text x="105" y="171" text-anchor="start" class="m-lab">Ciutadella</text>
+      <circle cx="76" cy="274" r="6" class="m-dot"/><text x="72" y="304" text-anchor="start" class="m-lab" data-i18n="m_artr">Far d'Artrutx</text>
+      <circle cx="449" cy="64" r="6" class="m-dot"/><text x="449" y="48" text-anchor="middle" class="m-lab">Fornells</text>
+      <circle cx="638" cy="357" r="6" class="m-dot"/><text x="624" y="347" text-anchor="end" class="m-lab" data-i18n="s5n">Maó</text>
+      <circle cx="581" cy="398" r="6" class="m-dot"/><text x="567" y="420" text-anchor="end" class="m-lab" data-i18n="m_air">Aeropuerto</text>
+      <circle cx="713" cy="370" r="13" class="m-ring"/><circle cx="713" cy="370" r="6" class="m-dot"/>
+      <text x="735" y="368" text-anchor="start" class="m-lab m-strong">La Mola</text><text x="735" y="392" text-anchor="start" class="m-sub" data-i18n="m_wed">Boda · 15.05</text>
+    </svg>
+  </figure>
+    <div class="recs">
+      <div>
+        <h4 data-i18n="r_beaches">Calas y playas</h4>
+        <ul>
+          <li><span data-i18n="r_mac">Macarella y Macarelleta</span></li>
+          <li>Cala Morell</li>
+          <li>Arenal de Son Saura</li>
+          <li><span data-i18n="r_preg">Pregonda y Binimel·là</span></li>
+          <li>Binidalí</li>
+          <li>Cala Galdana</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="r_visit">Visitas</h4>
+        <ul>
+          <li>Ciutadella</li>
+          <li>Es Mercadal <small>Ca n'Olga, Cas Sucrer</small></li>
+          <li>Fornells <small>Sa Llagosta, Es Cranc</small></li>
+          <li>Illa del Rei <small data-i18n="r_hw">Hauser &amp; Wirth: galería y Cantina</small></li>
+          <li>Líthica <small>Ciutadella</small></li>
+          <li>Bodegas Binifadet</li>
+          <li>Binibeca</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="r_sunset">Atardeceres</h4>
+        <ul>
+          <li>Cova d'en Xoroi</li>
+          <li>Far de Punta Nati</li>
+          <li>Far d'Artrutx</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="r_eat_c">Comer · Ciutadella</h4>
+        <ul>
+          <li>Cafè Balear</li>
+          <li>Imperi <small data-i18n="r_bkf">desayuno</small></li>
+          <li>S'Amarador</li>
+          <li>Ulisses</li>
+          <li>Pez Limón</li>
+          <li>Sa Gelateria</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="r_eat_m">Comer · Maó y alrededores</h4>
+        <ul>
+          <li>El Rais</li>
+          <li>El Romero</li>
+          <li>Tap's Can Avelino</li>
+          <li>Pinta Roja</li>
+          <li>Cap Roig <small>Sa Mesquida</small></li>
+          <li>Sa Pedrera des Pujol <small>Sant Lluís</small></li>
+          <li>Pan y Vino <small>Sant Lluís</small></li>
+          <li>En Cargol <small>Sant Lluís</small></li>
+          <li>Molí de Foc <small>Sant Climent</small></li>
+        </ul>
+      </div>
+    </div>
+</section>
+
+<!-- ============ REGALO ============ -->
+<!-- PENDIENTE: poned aquí el IBAN real antes de publicar -->
+<section class="gift" id="regalo">
+  <div class="wrap">
+    <span class="caps kicker" data-i18n="nav_regalo">Regalo</span>
+    <h2 data-i18n="gift_h">Gracias</h2>
+    <p class="lede" data-i18n="gift_lede">Lo más importante es teneros en Menorca celebrando nuestro amor.</p>
+    <p class="soft" data-i18n="gift_p">Además, si queréis hacernos un regalo, os lo agradecemos muchísimo.</p>
+    <div class="iban">
+      <span class="caps" data-i18n="holders">Titulares · Berta y Edu</span>
+      <span class="num" id="iban">ES00 0000 0000 0000 0000 0000</span>
+      <button type="button" id="copy-iban" data-i18n="copy_iban">Copiar número de cuenta</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="mono" data-i18n="foot">Berta y Edu</span>
+  <p class="caps">15.05.27 · Menorca</p>
+</footer>
+
+</body>
+</html>
