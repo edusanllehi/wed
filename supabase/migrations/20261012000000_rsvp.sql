@@ -54,6 +54,8 @@ alter table public.rsvp_responses enable row level security;
 alter table public.rsvp_guests    enable row level security;
 revoke all on public.rsvp_responses from anon, authenticated;
 revoke all on public.rsvp_guests    from anon, authenticated;
+-- El servidor (service_role) necesita acceso explícito si el proyecto no expone tablas automáticamente
+grant select, insert, update, delete on public.rsvp_responses, public.rsvp_guests to service_role;
 
 -- ---------------------------------------------------------------------
 -- 3. Guardado atómico e idempotente (lo llama /api/rsvp con service_role)
