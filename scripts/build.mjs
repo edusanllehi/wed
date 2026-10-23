@@ -38,6 +38,7 @@ if (process.argv.includes("--preview")) {
   writeFileSync(join(dist, "index.html"), html);
   writeFileSync(join(dist, "app.js"), app);
   writeFileSync(join(dist, "i18n.js"), i18nJs);
+  writeFileSync(join(dist, "robots.txt"), "User-agent: *\nDisallow: /\n");
   for (const f of readdirSync(join(src, "assets"))) cpSync(join(src, "assets", f), join(dist, "assets", f));
   console.log("dist/ listo:", readdirSync(dist).join(", "));
 }
