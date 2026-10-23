@@ -1,0 +1,21 @@
+{
+  "name": "boda-berta-edu",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Web de la boda de Berta i Edu (15.05.2027, Menorca) con RSVP en Supabase",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:preview": "node scripts/build.mjs --preview",
+    "dev": "node scripts/build.mjs && node scripts/dev-server.mjs",
+    "test": "node --test --test-concurrency=1 --test-timeout=240000 tests/*.test.mjs",
+    "export:csv": "node scripts/export-csv.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.2.17",
+    "playwright-core": "^1.56.1"
+  }
+}
