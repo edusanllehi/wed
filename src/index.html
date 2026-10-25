@@ -169,6 +169,7 @@ section h2{font-size:clamp(3rem,10vw,4.8rem);margin-bottom:24px}
 .iban{margin-top:32px;display:grid;gap:12px;padding:26px;border:1px solid rgba(251,244,226,.35)}
 .iban .caps{font-size:.72rem;color:#A9CBD9;font-weight:500}
 a[x-apple-data-detectors],.iban .num a{color:inherit!important;text-decoration:none!important;pointer-events:none}
+.gift-thanks{margin-top:44px}
 .iban .num{font-family:var(--display);font-size:clamp(1.5rem,6vw,2.2rem);letter-spacing:.02em;word-break:break-word;user-select:all}
 .iban button{justify-self:start;background:var(--cream);color:var(--sea-deep);border:0;padding:12px 18px;font:600 .8rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
 
@@ -519,7 +520,6 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
 <section class="gift" id="regalo">
   <div class="wrap">
     <span class="caps kicker" data-i18n="nav_regalo">Regalo</span>
-    <h2 data-i18n="gift_h">Gracias</h2>
     <p class="lede" data-i18n="gift_lede">Lo más importante es teneros en Menorca celebrando nuestro amor.</p>
     <p class="soft" data-i18n="gift_p">Además, si queréis hacernos un regalo, os lo agradecemos muchísimo.</p>
     <div class="iban">
@@ -527,6 +527,7 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
       <span class="num" id="iban">ES78 1563 2626 3332 6258 2044</span>
       <button type="button" id="copy-iban" data-i18n="copy_iban">Copiar número de cuenta</button>
     </div>
+    <h2 class="gift-thanks" data-i18n="gift_h">Gracias</h2>
   </div>
 </section>
 
