@@ -24,7 +24,7 @@
   --line:rgba(43,39,34,.16);
   --display:"Instrument Serif","Times New Roman",Georgia,serif;
   --body:"Cormorant Garamond",Garamond,"Times New Roman",Georgia,serif;
-  --shoes:url("/assets/shoes.jpg");
+  --band:url("/assets/sunset.jpg");
   --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   color-scheme:light;
 }
@@ -122,7 +122,7 @@ section h2{font-size:clamp(3rem,10vw,4.8rem);margin-bottom:24px}
 
 /* Franja de mar */
 .sep{border:0;border-top:1px solid var(--line);max-width:720px;margin:0 auto}
-.band{margin-inline:-20px;height:clamp(180px,30vw,380px);background:var(--shoes) center 55%/cover no-repeat;position:relative}
+.band{margin-inline:-20px;height:clamp(180px,30vw,380px);background:var(--band) center 35%/cover no-repeat;position:relative}
 .band::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.14;mix-blend-mode:overlay}
 
 /* Menorca */
@@ -241,7 +241,6 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
   <ul>
     <li><a href="#rsvp">RSVP</a></li>
     <li><a href="#dia" data-i18n="nav_dia">El día</a></li>
-    <li><a href="#preboda" data-i18n="nav_preboda">Preboda</a></li>
     <li><a href="#dresscode">Dress code</a></li>
     <li><a href="#alojamiento" data-i18n="nav_aloj">Alojamiento</a></li>
     <li><a href="#coches" data-i18n="nav_coches">Coches</a></li>
@@ -289,14 +288,6 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
         <input type="text" id="nombre_acompanante" name="nombre_acompanante" autocomplete="off" maxlength="120" data-i18n-ph="partner_ph" placeholder="Escribe aquí su nombre">
       </fieldset>
 
-      <fieldset>
-        <legend id="pre-legend">¿Vendrás a la preboda?</legend>
-        <p class="hint" data-i18n="pre_hint">Viernes 14 de mayo, la tarde antes de la boda.</p>
-        <div class="choices">
-          <label class="choice"><input type="radio" id="pre-si" name="preboda" value="yes"><span id="pre-yes-label">Sí, me apunto</span></label>
-          <label class="choice"><input type="radio" id="pre-no" name="preboda" value="no"><span id="pre-no-label">No podré</span></label>
-        </div>
-      </fieldset>
 
       <fieldset>
         <legend data-i18n="f_diet_me">Restricciones alimentarias · tú</legend>
@@ -367,17 +358,6 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
     <span class="caps" data-i18n="bus_from">Salida de los autobuses</span>
     <strong data-i18n="bus_place">Puerto de Maó</strong>
     <a href="https://maps.app.goo.gl/kjH5zBGrpkeFEamT9" target="_blank" rel="noopener" data-i18n="map">Ver en el mapa</a>
-  </div>
-</section>
-
-<!-- ============ PREBODA ============ -->
-<section class="wrap" id="preboda">
-  <span class="caps kicker" data-i18n="pre_k">Viernes, 14 de mayo de 2027</span>
-  <h2 data-i18n="pre_h">La preboda</h2>
-  <p class="lede" data-i18n="pre_lede">La tarde antes nos juntaremos para empezar a celebrarlo.</p>
-  <div class="card">
-    <span class="caps" data-i18n="lugar_hora">Lugar y hora</span>
-    <strong class="muted" data-i18n="tbc">Por confirmar</strong>
   </div>
 </section>
 
@@ -523,7 +503,7 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
     <p class="lede" data-i18n="gift_lede">Lo más importante es teneros en Menorca celebrando nuestro amor.</p>
     <p class="soft" data-i18n="gift_p">Además, si queréis hacernos un regalo, os lo agradecemos muchísimo.</p>
     <div class="iban">
-      <span class="caps" data-i18n="holders">Titulares · Berta y Edu</span>
+      <span class="caps" data-i18n="holders">Titulares · Berta Arqué González y Eduard Sanllehí Negre</span>
       <span class="num" id="iban">ES78 1563 2626 3332 6258 2044</span>
       <button type="button" id="copy-iban" data-i18n="copy_iban">Copiar número de cuenta</button>
     </div>

@@ -73,9 +73,6 @@
     $("#msg-block").hidden = !si;
     $("#acomp-block").hidden = !con;
     $("#diet2-block").hidden = !con;
-    const pre = t(con ? "pre_opts_pl" : "pre_opts");
-    $("#pre-legend").textContent = t(con ? "f_pre_pl" : "f_pre");
-    $("#pre-yes-label").textContent = pre[0]; $("#pre-no-label").textContent = pre[1];
     const bus = t(con ? "bus_pl" : "bus");
     $("#bus-yes-label").textContent = bus[0]; $("#bus-no-label").textContent = bus[1];
   }
@@ -118,7 +115,6 @@
       attending: val("asiste"),
       with_partner: si ? val("acompanante") : "",
       partner_name: con ? form.nombre_acompanante.value.trim() : "",
-      prewedding: si ? val("preboda") : "",
       dietary: si ? dietOf("dieta") : [],
       dietary_other: si ? form.dieta_otros.value.trim() : "",
       partner_dietary: con ? dietOf("dieta_acompanante") : [],
@@ -133,7 +129,6 @@
     if (!d.attending) return ["err_attend"];
     if (d.attending === "yes" && !d.with_partner) return ["err_plus"];
     if (d.with_partner === "partner" && d.partner_name.length < 2) return ["err_plusname", form.nombre_acompanante];
-    if (d.attending === "yes" && !d.prewedding) return ["err_pre"];
     return null;
   }
 
