@@ -41,7 +41,8 @@ export function validate(b) {
   if (!out.attending) return { ok: true, value: { ...out, with_partner: false } };
 
   if (b.with_partner !== "partner" && b.with_partner !== "alone") return { ok: false, field: "with_partner" };
-  if (b.prewedding !== "yes" && b.prewedding !== "no") return { ok: false, field: "prewedding" };
+  // La preboda ya no se pregunta en el formulario; se acepta si llega por compatibilidad
+  if (![undefined, null, "", "yes", "no"].includes(b.prewedding)) return { ok: false, field: "prewedding" };
   if (!["", undefined, null, "bus", "car"].includes(b.transport)) return { ok: false, field: "transport" };
   const dietary = diets(b.dietary);
   if (!dietary) return { ok: false, field: "dietary" };
@@ -52,7 +53,7 @@ export function validate(b) {
 
   Object.assign(out, {
     with_partner: b.with_partner === "partner",
-    prewedding: b.prewedding === "yes",
+    prewedding: b.prewedding === "yes" ? true : b.prewedding === "no" ? false : null,
     transport: b.transport || "",
     dietary, dietary_other, message,
   });
