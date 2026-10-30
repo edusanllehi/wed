@@ -26,7 +26,7 @@ if (process.argv.includes("--preview")) {
     .replace('<script src="/i18n.js" defer></script>', "")
     .replace('<script src="/app.js" defer></script>', "")
     .replaceAll("/assets/poster.jpg", dataUri("poster.jpg"))
-    .replaceAll("/assets/shoes.jpg", dataUri("shoes.jpg"))
+    .replaceAll("/assets/sunset.jpg", dataUri("sunset.jpg"))
     .replace("</body>", `<script>${i18nJs}window.RSVP_ENDPOINT="";\n${app}</script>\n</body>`);
   mkdirSync(join(root, "preview"), { recursive: true });
   writeFileSync(join(root, "preview", "index.html"), out);
