@@ -11,7 +11,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 
 export const config = {
   // Todo menos el cron (que tiene su propio secreto) y robots.txt
-  matcher: ["/((?!api/keepalive|robots\\.txt).*)"],
+  matcher: ["/((?!api/keepalive|robots\\.txt|assets/[a-z0-9-]+\\.woff2).*)"],
 };
 
 const COOKIE = "be_access";
@@ -61,7 +61,7 @@ const SECURITY_HEADERS = {
   "x-robots-tag": "noindex, nofollow",
   "x-content-type-options": "nosniff",
   "referrer-policy": "strict-origin-when-cross-origin",
-  "content-security-policy": "default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; form-action 'self'; frame-ancestors 'none'; base-uri 'none'",
+  "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'",
 };
 
 export function gatePage(lang, nextPath, error) {
@@ -73,7 +73,7 @@ export function gatePage(lang, nextPath, error) {
 <meta name="robots" content="noindex,nofollow">
 <meta name="format-detection" content="telephone=no">
 <title>Berta &amp; Edu · 15.05.27</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Cormorant+Garamond:wght@500;600&display=swap">
+<style>@font-face{font-family:"Instrument Serif";font-weight:400;font-display:swap;src:url(/assets/instrument-serif-latin-400-normal.woff2) format("woff2")}@font-face{font-family:"Cormorant Garamond";font-weight:500;font-display:swap;src:url(/assets/cormorant-garamond-latin-500-normal.woff2) format("woff2")}@font-face{font-family:"Cormorant Garamond";font-weight:600;font-display:swap;src:url(/assets/cormorant-garamond-latin-600-normal.woff2) format("woff2")}</style>
 <style>
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px 16px;background:#F1ECE0;color:#2B2722;font:500 1.25rem/1.5 "Cormorant Garamond",Garamond,Georgia,serif}
