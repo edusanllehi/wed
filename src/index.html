@@ -7,10 +7,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Berta i Edu · 15.05.27</title>
 <meta name="description" content="Berta i Edu · 15.05.2027 · Fortaleza de la Mola, Menorca">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="preload" href="/assets/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/instrument-serif-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url(/assets/instrument-serif-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:500;font-display:swap;src:url(/assets/cormorant-garamond-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/cormorant-garamond-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:700;font-display:swap;src:url(/assets/cormorant-garamond-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:400;font-display:swap;src:url(/assets/cormorant-garamond-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-display:swap;src:url(/assets/cormorant-garamond-latin-500-italic.woff2) format("woff2")}
 /* Layout: el save the date abre la página; debajo, una columna de lectura sobre papel
    con la misma tipografía del póster (Instrument Serif) en todos los títulos. */
 :root{
@@ -52,7 +59,7 @@ strong{font-weight:600}
 
 /* ---------- Portada ---------- */
 .poster{max-width:620px;margin-inline:auto;padding-block:10px 30px;display:grid;gap:22px;justify-items:center}
-.poster .caps{font-weight:500;letter-spacing:.3em;color:var(--ink);text-align:center;text-wrap:balance;line-height:1.7;max-width:34em}
+.poster .caps{font-weight:700;font-size:.9rem;letter-spacing:.26em;color:var(--ink);text-align:center;text-wrap:balance;line-height:1.7;max-width:34em}
 .poster img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:1249/1674}
 .nw{white-space:nowrap}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -64,9 +71,9 @@ strong{font-weight:600}
   backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
   border-block:1px solid var(--line);
 }
-.nav ul{list-style:none;margin:0 auto;padding:6px 12px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 4px;max-width:1100px}
-.nav ul a{display:block;white-space:nowrap;padding:10px 12px;color:var(--ink);text-decoration:none;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
-.nav ul a:hover{color:var(--sea)}
+.nav ul{list-style:none;margin:0 auto;padding:10px 12px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:1100px}
+.nav ul a{display:block;white-space:nowrap;padding:9px 13px;border:1px solid rgba(43,39,34,.28);background:rgba(251,244,226,.55);color:var(--ink);text-decoration:none;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700}
+.nav ul a:hover{color:var(--sea);border-color:var(--sea)}
 .lang{display:flex;justify-content:flex-end;gap:2px;max-width:1100px;margin-inline:auto;padding-top:14px}
 .lang button{background:none;border:0;padding:8px 6px;font:600 .8rem/1 var(--body);letter-spacing:.18em;color:var(--ink-soft);cursor:pointer}
 .lang button[aria-pressed="true"]{color:var(--sea);text-decoration:underline;text-underline-offset:5px}
@@ -167,6 +174,7 @@ section h2{font-size:clamp(3rem,10vw,4.8rem);margin-bottom:24px}
 .gift h2{color:var(--cream)}
 .gift .soft{color:#CFDCE0;margin-top:14px}
 .iban{margin-top:32px;display:grid;gap:12px;padding:26px;border:1px solid rgba(251,244,226,.35)}
+.iban .holders{line-height:1.8}
 .iban .caps{font-size:.72rem;color:#A9CBD9;font-weight:500}
 a[x-apple-data-detectors],.iban .num a{color:inherit!important;text-decoration:none!important;pointer-events:none}
 .gift-thanks{margin-top:44px}
@@ -215,8 +223,8 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
   .code{grid-column:1;grid-row:auto;justify-self:start;margin-top:6px}
   .sub{padding-left:14px}
   .card{padding:24px 22px}
-  .nav ul{padding:6px 4px;gap:0}
-  .nav ul a{padding:8px 7px;font-size:.68rem;letter-spacing:.14em}
+  .nav ul{padding:10px 8px;gap:6px}
+  .nav ul a{padding:7px 9px;font-size:.68rem;letter-spacing:.12em}
 }
 </style>
 <script src="/i18n.js" defer></script>
@@ -503,7 +511,7 @@ footer .mono{font-family:var(--display);font-size:2.6rem}
     <p class="lede" data-i18n="gift_lede">Lo más importante es teneros en Menorca celebrando nuestro amor.</p>
     <p class="soft" data-i18n="gift_p">Además, si queréis hacernos un regalo, os lo agradecemos muchísimo.</p>
     <div class="iban">
-      <span class="caps" data-i18n="holders">Titulares · Berta Arqué González y Eduard Sanllehí Negre</span>
+      <span class="caps holders">Berta Arqué González<br>Eduard Sanllehí Negre</span>
       <span class="num" id="iban">ES78 1563 2626 3332 6258 2044</span>
       <button type="button" id="copy-iban" data-i18n="copy_iban">Copiar número de cuenta</button>
     </div>
