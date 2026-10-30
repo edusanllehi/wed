@@ -161,14 +161,14 @@ returns text language sql immutable as $$
     when 'pregnant' then 'Embarazada' else code end
 $$;
 
-create or replace view public.rsvp_export
+drop view if exists public.rsvp_export;
+create view public.rsvp_export
 with (security_invoker = true) as
 select
   to_char(r.created_at at time zone 'Europe/Madrid', 'YYYY-MM-DD HH24:MI') as fecha,
   g.full_name                                                           as invitado,
   case g.role when 'primary' then 'Titular' else 'Pareja' end           as rol,
   case when r.attending then 'Sí' else 'No' end                         as asiste,
-  case when not r.attending then '' when r.prewedding then 'Sí' else 'No' end as preboda,
   case r.transport when 'bus' then 'Bus' when 'car' then 'Coche' else '' end as transporte,
   array_to_string(array(select public.rsvp_diet_label(x) from unnest(g.dietary) x), ', ') as dieta,
   coalesce(g.dietary_other, '')                                         as dieta_detalle,
@@ -179,12 +179,12 @@ from public.rsvp_responses r
 join public.rsvp_guests g on g.response_id = r.id
 order by r.created_at, r.id, g.role desc;
 
-create or replace view public.rsvp_totals
+drop view if exists public.rsvp_totals;
+create view public.rsvp_totals
 with (security_invoker = true) as
 select
   count(*) filter (where r.attending)                                   as personas_que_vienen,
   count(distinct r.id) filter (where not r.attending)                   as respuestas_que_no_vienen,
-  count(*) filter (where r.attending and r.prewedding)                  as personas_preboda,
   count(*) filter (where r.attending and r.transport = 'bus')           as personas_bus,
   count(*) filter (where r.attending and g.dietary && array['vegetarian','vegan','gluten_free','lactose_free','nuts','shellfish','fish','pregnant']) as personas_con_restricciones
 from public.rsvp_responses r
